@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tesisp-app": {
+    "appTesis": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tesisp-app",
+            "outputPath": "dist/app-tesis",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,15 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -62,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tesisp-app:build:production"
+              "buildTarget": "appTesis:build:production"
             },
             "development": {
-              "buildTarget": "tesisp-app:build:development"
+              "buildTarget": "appTesis:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "tesisp-app:build"
+            "buildTarget": "appTesis:build"
           }
         },
         "test": {
@@ -98,6 +104,6 @@
     }
   },
   "cli": {
-    "analytics": "12f5db77-b156-4768-aa8a-10d0017a92f3"
+    "analytics": "830ebca9-3de0-4a3a-8737-ce536426dd43"
   }
 }
